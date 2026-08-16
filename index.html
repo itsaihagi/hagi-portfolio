@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#030706">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="HAGI  - AI agents, MCP servers, reusable skills, purpose-built AI tools, automation, modernization, Ignition SCADA, IoT, cloud, DevOps and enterprise integration consulting.">
+<title>HAGI | AI, Automation, Modernization & SCADA Consultant</title>
+<style>
+:root{
+  --bg:#030706; --panel:#07100d; --panel2:#0a1511; --text:#d9ffe9; --muted:#7fa493;
+  --line:#143326; --accent:#35ff9a; --accent2:#00d9ff; --glow:rgba(53,255,154,.16);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+background:
+linear-gradient(rgba(53,255,154,.025) 1px,transparent 1px),
+linear-gradient(90deg,rgba(53,255,154,.025) 1px,transparent 1px),
+radial-gradient(circle at 85% 5%,rgba(0,217,255,.10),transparent 24%),
+radial-gradient(circle at 10% 20%,rgba(53,255,154,.08),transparent 22%),
+#030706;
+background-size:42px 42px,42px 42px,auto,auto,auto;
+color:var(--text);line-height:1.65}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1160px,92%);margin:auto}
+nav{position:sticky;top:0;z-index:20;background:rgba(7,11,18,.82);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.05)}
+.navin{display:flex;align-items:center;justify-content:space-between;min-height:68px;gap:24px}
+.brand{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:900;letter-spacing:.02em}.brand:before{content:'> ';color:var(--accent)}.brand span{color:var(--accent)}
+.links{display:flex;gap:22px;flex-wrap:wrap;color:var(--muted);font-size:.92rem}.links a:hover{color:var(--text)}
+.hero{padding:108px 0 80px;display:grid;grid-template-columns:1.25fr .75fr;gap:55px;align-items:center}
+.eyebrow{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;display:inline-flex;gap:9px;align-items:center;border:1px solid var(--line);background:rgba(255,255,255,.02);border-radius:999px;padding:7px 12px;color:var(--accent);font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 18px var(--accent)}
+h1{font-size:clamp(2.7rem,6vw,5.5rem);line-height:.98;margin:22px 0 24px;letter-spacing:-.055em}
+.grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:1.16rem;color:#b7c4d6;max-width:780px}
+.cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.btn{padding:12px 17px;border-radius:10px;font-weight:750;border:1px solid var(--line);background:var(--panel)}
+.btn.primary{background:linear-gradient(135deg,var(--accent),#2dd4bf);color:#04211d;border-color:transparent}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.stat{padding:24px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.015));box-shadow:0 18px 60px rgba(0,0,0,.22)}
+.stat b{font-size:1.6rem;display:block}.stat span{color:var(--muted);font-size:.88rem}
+section{padding:76px 0}.section-head{display:flex;justify-content:space-between;gap:28px;align-items:end;margin-bottom:30px}
+.kicker{color:var(--accent);font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.14em}
+h2{font-size:clamp(1.85rem,3vw,2.7rem);margin:7px 0 0;letter-spacing:-.03em}
+.section-head p{max-width:560px;color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(8,24,18,.96),rgba(5,14,11,.96));border-radius:18px;padding:24px;transition:.22s transform,.22s border-color}
+.card:hover{transform:translateY(-4px);border-color:#2e4a65}
+.card h3{margin:5px 0 10px;font-size:1.05rem}.card p{color:var(--muted);margin:0;font-size:.94rem}
+.icon{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--accent);font-weight:900}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{border:1px solid var(--line);color:#a9f7c8;background:#06100c;border-radius:999px;padding:5px 9px;font-size:.76rem}
+.feature{display:grid;grid-template-columns:.92fr 1.08fr;gap:18px;margin-top:16px}
+.project{padding:26px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,#08130f,#050c09);box-shadow:inset 0 1px 0 rgba(53,255,154,.04)}
+.project small{color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:.1em}
+.project h3{font-size:1.4rem;margin:7px 0 10px}.project p{color:var(--muted)}
+.project ul{padding-left:18px;color:#b7c4d6}.project li{margin:7px 0}
+.stack{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.stack div{border:1px solid var(--line);border-radius:12px;padding:14px;background:rgba(255,255,255,.02);font-size:.9rem}
+.stack b{display:block;color:var(--accent);font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px}
+.callout{border:1px solid #24536a;background:linear-gradient(135deg,rgba(94,234,212,.08),rgba(96,165,250,.08));border-radius:20px;padding:34px;display:flex;justify-content:space-between;gap:30px;align-items:center}
+.callout h2{margin:0 0 8px}.callout p{margin:0;color:#b9c8d9;max-width:760px}
+footer{padding:32px 0 55px;color:var(--muted);border-top:1px solid rgba(255,255,255,.05);margin-top:45px}
+@media(max-width:900px){.hero,.feature{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.stack{grid-template-columns:1fr 1fr}.hero{padding-top:74px}}
+@media(max-width:620px){.links{display:none}.grid,.stack,.stats{grid-template-columns:1fr}.section-head,.callout{display:block}.callout .cta{margin-top:20px}h1{font-size:3.1rem}}
+</style>
+
+<style>
+.whatsapp-btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border:1px solid #35ff9a;border-radius:10px;background:rgba(53,255,154,.08);color:#d9ffe9;text-decoration:none;font-weight:800;box-shadow:0 0 24px rgba(53,255,154,.10)}
+.whatsapp-btn:hover{background:rgba(53,255,154,.16);box-shadow:0 0 30px rgba(53,255,154,.18)}
+.whatsapp-icon{width:20px;height:20px;display:inline-block}
+.contact-number{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#a9f7c8;margin-top:12px}
+</style>
+
+
+<style>
+/* ===== Mobile-first / GitHub Pages enhancements ===== */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:82px}
+body{min-width:320px;overflow-x:hidden}
+img,svg{max-width:100%}
+a,button{-webkit-tap-highlight-color:transparent}
+.wrap{width:min(1160px,calc(100% - 32px))}
+.nav{padding-top:env(safe-area-inset-top)}
+.navin{min-height:64px}
+.brand{font-size:.92rem;white-space:nowrap}
+.mobile-menu-btn{
+  display:none;align-items:center;justify-content:center;width:44px;height:44px;
+  border:1px solid var(--line);border-radius:10px;background:#06100c;color:var(--accent);
+  cursor:pointer;font:800 1.25rem/1 ui-monospace,SFMono-Regular,Menlo,monospace
+}
+.mobile-menu-btn:focus-visible,.btn:focus-visible,.whatsapp-btn:focus-visible,.links a:focus-visible{
+  outline:2px solid var(--accent);outline-offset:3px
+}
+.mobile-menu{display:none}
+.hero{min-height:auto}
+.btn,.whatsapp-btn{min-height:46px;justify-content:center}
+.card,.project,.stat{overflow-wrap:anywhere}
+.card h3,.project h3{line-height:1.25}
+.contact-number{font-size:.95rem}
+
+.mobile-whatsapp{
+  display:none;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));
+  z-index:60;width:54px;height:54px;border-radius:50%;align-items:center;justify-content:center;
+  background:#0b1d15;border:1px solid #35ff9a;color:#35ff9a;
+  box-shadow:0 10px 35px rgba(0,0,0,.45),0 0 22px rgba(53,255,154,.18)
+}
+.mobile-whatsapp svg{width:25px;height:25px}
+
+@media(max-width:900px){
+  .wrap{width:min(100% - 28px,760px)}
+  .hero{padding:64px 0 48px}
+  .hero h1{font-size:clamp(2.6rem,11vw,4.8rem);line-height:1.02;letter-spacing:-.045em}
+  .lead{font-size:1.03rem;line-height:1.7}
+  section{padding:58px 0}
+  .section-head{align-items:start}
+  .grid{grid-template-columns:1fr 1fr}
+  .feature{grid-template-columns:1fr}
+  .stack{grid-template-columns:1fr 1fr}
+}
+
+@media(max-width:720px){
+  .navin{position:relative}
+  .mobile-menu-btn{display:inline-flex}
+  .links{
+    display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;
+    flex-direction:column;gap:0;padding:8px;border:1px solid var(--line);
+    border-radius:14px;background:rgba(3,7,6,.98);box-shadow:0 18px 50px rgba(0,0,0,.45)
+  }
+  .links.open{display:flex}
+  .links a{padding:13px 12px;border-radius:8px;font-size:.95rem}
+  .links a:hover{background:rgba(53,255,154,.06)}
+  .grid,.stack,.stats{grid-template-columns:1fr}
+  .section-head{display:block}
+  .section-head p{margin-top:12px}
+  .callout{display:block;padding:26px 20px}
+  .callout .cta{margin-top:20px}
+  .mobile-whatsapp{display:flex}
+}
+
+@media(max-width:560px){
+  .wrap{width:calc(100% - 24px)}
+  nav{backdrop-filter:blur(12px)}
+  .hero{padding:48px 0 36px}
+  .hero h1{font-size:clamp(2.35rem,12vw,3.7rem);margin:18px 0 20px}
+  .eyebrow{font-size:.72rem;letter-spacing:.055em;padding:7px 10px}
+  .lead{font-size:1rem}
+  .cta{display:grid;grid-template-columns:1fr;width:100%}
+  .btn,.whatsapp-btn{width:100%;padding:13px 16px}
+  section{padding:46px 0}
+  .section-head{margin-bottom:22px}
+  h2{font-size:clamp(1.75rem,8vw,2.35rem)}
+  .card,.project{padding:20px;border-radius:14px}
+  .stat{padding:18px}
+  .stat b{font-size:1.3rem}
+  .tag{font-size:.72rem;padding:5px 8px}
+  .project ul{padding-left:20px}
+  .contact-number{font-size:.88rem}
+  footer{padding-bottom:90px}
+}
+
+@media(max-width:380px){
+  .brand small{display:none}
+  .hero h1{font-size:2.25rem}
+  .card,.project{padding:18px}
+}
+</style>
+
+</head>
+<body>
+<nav>
+  <div class="wrap navin">
+    <a class="brand" href="#top">HA<span>_</span>GI</a><button class="mobile-menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">☰</button>
+    <div class="links" id="mobile-nav">
+      <a href="#focus">AI / Automation</a><a href="#agentic-ai">AI Agents</a><a href="#conversational-ai">AI Solutions</a><a href="#expertise">Expertise</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#packages">Hire Me</a><a href="#stack">Tech Stack</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+<div class="wrap">
+  <div class="hero">
+    <div>
+      <div class="eyebrow"><span class="dot"></span> Available for consulting & freelance projects</div>
+      <h1>AI Engineering.<br><span class="grad">Automation. Modernization.</span></h1>
+      <p class="lead">I help businesses automate operations, adopt practical AI, modernize legacy systems, and build connected IoT and industrial solutions. From LLMs, AI agents, MCP servers, purpose-built AI tools and intelligent workflow automation to IoT systems, SCADA/MES, PLC integration, APIs, cloud, DevOps and observability, I build secure, scalable, production-ready solutions that connect devices, systems, data and people.</p>
+      <div class="cta">
+        
+        <a class="whatsapp-btn" href="https://wa.me/601145727789" target="_blank" rel="noopener"><svg class="whatsapp-icon" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16.04 3C8.85 3 3 8.77 3 15.86c0 2.5.74 4.94 2.13 7.02L3 29l6.33-2.06a13.13 13.13 0 0 0 6.7 1.84h.01C23.23 28.78 29 23 29 15.9 29 8.79 23.23 3 16.04 3Zm7.63 18.22c-.32.9-1.88 1.72-2.58 1.8-.67.08-1.52.11-2.46-.15-.57-.16-1.3-.42-2.24-.82-3.94-1.69-6.5-5.61-6.7-5.87-.2-.26-1.6-2.1-1.6-4.01 0-1.92 1.02-2.86 1.38-3.25.36-.39.79-.49 1.05-.49h.76c.24.01.57-.09.89.67.32.77 1.09 2.65 1.19 2.84.1.2.16.42.03.68-.13.26-.2.42-.39.65-.2.23-.41.51-.59.68-.2.19-.4.4-.17.79.23.39 1.02 1.66 2.19 2.69 1.5 1.32 2.77 1.73 3.16 1.92.39.19.62.16.85-.1.23-.26.98-1.13 1.24-1.52.26-.39.52-.32.88-.19.36.13 2.29 1.07 2.68 1.26.39.19.65.29.75.45.1.16.1.94-.22 1.84Z"/></svg><span>WhatsApp</span></a>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>AI + Automation</b><span>Production-focused intelligent workflows</span></div>
+      <div class="stat"><b>Modernization</b><span>Legacy to automated platforms</span></div>
+      <div class="stat"><b>SCADA / MES</b><span>Ignition, OPC UA and industrial integration</span></div>
+      <div class="stat"><b>Orchestration</b><span>Python, n8n, Ansible, Rundeck, CI/CD</span></div>
+    </div>
+  </div>
+</div>
+
+
+<section id="focus">
+<div class="wrap">
+  <div class="section-head">
+    <div><div class="kicker">Primary focus</div><h2>AI × Automation × Modernization</h2></div>
+    <p>Production-oriented engineering for businesses that need intelligent workflows, legacy transformation and connected industrial systems.</p>
+  </div>
+  <div class="grid">
+    <article class="card"><div class="icon">AI://</div><h3>Applied AI Engineering</h3><p>LLM APIs, AI agents, RAG, reusable skills, MCP-connected tools, knowledge assistants and AI workflows connected to real product, operational and enterprise data flows.</p><div class="tags"><span class="tag">LLM APIs</span><span class="tag">Agents</span><span class="tag">RAG</span><span class="tag">Evaluation</span></div></article>
+    <article class="card"><div class="icon">AUTO://</div><h3>Workflow & Systems Automation</h3><p>API orchestration, Python automation, n8n, Power Automate, Rundeck, Ansible and event-driven workflows that reduce manual operations.</p><div class="tags"><span class="tag">n8n</span><span class="tag">Power Automate</span><span class="tag">Rundeck</span><span class="tag">Ansible</span></div></article>
+    <article class="card"><div class="icon">MOD://</div><h3>Legacy Modernization</h3><p>Modernize middleware, deployment, MFT, SCADA and operational platforms using APIs, CI/CD, containers, IaC, security and observability.</p><div class="tags"><span class="tag">Terraform</span><span class="tag">CI/CD</span><span class="tag">Containers</span><span class="tag">Observability</span></div></article>
+    <article class="card"><div class="icon">SCADA://</div><h3>Ignition SCADA Engineering</h3><p>Architecture, development, deployment and support for Ignition SCADA solutions using Ignition Vision, Ignition Perspective and Ignition WebDev. Hands-on exposure to flow computers, PLC/SCADA connectivity, Siemens S7, OPC UA and REST API integration, including PLC-to-IT and SCADA-to-MES data flows. Experience with analyzer and sampling systems, with participation in FAT, SAT and commissioning activities.</p><div class="tags"><span class="tag">Ignition</span><span class="tag">Perspective</span><span class="tag">Ignition Vision</span><span class="tag">Ignition Perspective</span><span class="tag">Ignition WebDev</span><span class="tag">Siemens S7</span><span class="tag">Flow Computers</span><span class="tag">PLC-IT</span><span class="tag">REST API</span><span class="tag">Analyzer Systems</span><span class="tag">FAT / SAT</span><span class="tag">Commissioning</span></div></article>
+    <article class="card"><div class="icon">OPS://</div><h3>Industrial Observability</h3><p>Health monitoring across SCADA, MES, OPC UA, REST APIs and infrastructure using SQL-backed metrics, Grafana and operational dashboards.</p><div class="tags"><span class="tag">Grafana</span><span class="tag">OPC UA</span><span class="tag">REST</span><span class="tag">SQL Metrics</span></div></article>
+    <article class="card"><div class="icon">LEAD://</div><h3>Technical Leadership</h3><p>Lead architecture, mentor developers, guide engineering decisions and take solutions from rapid prototype through production deployment.</p><div class="tags"><span class="tag">Architecture</span><span class="tag">Mentoring</span><span class="tag">Delivery</span><span class="tag">Production</span></div></article>
+  </div>
+</div>
+</section>
+
+<section id="expertise">
+<div class="wrap">
+  <div class="section-head">
+    <div><div class="kicker">Niche expertise</div><h2>Where I create the most value</h2></div>
+    <p>Positioned for clients who need hands-on architecture plus implementation—not just advisory slides.</p>
+  </div>
+  <div class="grid">
+    <article class="card"><div class="icon">01 /</div><h3>Enterprise Integration Modernization</h3><p>Modernize legacy middleware and integration estates using repeatable patterns for messaging, APIs, secure transfer and hybrid connectivity.</p><div class="tags"><span class="tag">IBM MQ</span><span class="tag">IIB</span><span class="tag">DataPower</span><span class="tag">Solace</span></div></article>
+    <article class="card"><div class="icon">02 /</div><h3>Managed File Transfer Platforms</h3><p>Design secure, resilient MFT solutions covering orchestration, external transfer, failover, storage abstraction, encryption and operational monitoring.</p><div class="tags"><span class="tag">Axway CFT</span><span class="tag">Secure Transport</span><span class="tag">MinIO</span><span class="tag">SFTP</span></div></article>
+    <article class="card"><div class="icon">03 /</div><h3>Cloud Platform Engineering</h3><p>Build hybrid and multi-region cloud foundations with reusable infrastructure modules, environment consistency and production-grade resiliency.</p><div class="tags"><span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">Terraform</span><span class="tag">Ansible</span></div></article>
+    <article class="card"><div class="icon">04 /</div><h3>CI/CD & Release Automation</h3><p>Automate product installation, testing and deployments with manifest-driven pipelines, reusable deployment logic and secure secret handling.</p><div class="tags"><span class="tag">Azure DevOps</span><span class="tag">Jenkins</span><span class="tag">Git</span><span class="tag">Python</span></div></article>
+    <article class="card"><div class="icon">05 /</div><h3>Security Engineering for Integration</h3><p>Strengthen transport and payload security using TLS modernization, encryption/decryption patterns, secrets management and HSM-backed key controls.</p><div class="tags"><span class="tag">TLS 1.2/1.3</span><span class="tag">HashiCorp Vault</span><span class="tag">HSM</span><span class="tag">SHA-2</span></div></article>
+    <article class="card"><div class="icon">06 /</div><h3>Observability & SRE Enablement</h3><p>Create actionable monitoring for integration platforms using log analytics, metrics and custom automation to reduce mean time to detect and recover.</p><div class="tags"><span class="tag">Grafana</span><span class="tag">Elastic Stack</span><span class="tag">OpenTelemetry</span><span class="tag">Kibana</span></div></article>
+  </div>
+</div>
+</section>
+
+
+
+
+<section id="agentic-ai">
+<div class="wrap">
+  <div class="section-head">
+    <div>
+      <div class="kicker">AGENTIC AI://</div>
+      <h2>AI Agents, Skills, MCP & Purpose-Built Tools</h2>
+    </div>
+    <p>Design and implementation of task-focused AI agents that can reason over context, call tools, work with APIs and enterprise systems, and execute controlled workflows.</p>
+  </div>
+
+  <div class="grid">
+    <article class="card">
+      <div class="icon">AGENT://</div>
+      <h3>AI Agent Engineering</h3>
+      <p>Build practical AI agents for engineering, operations, support, research, documentation, workflow execution and business automation.</p>
+      <div class="tags">
+        <span class="tag">Claude</span>
+        <span class="tag">OpenAI Codex</span>
+        <span class="tag">GitHub</span>
+        <span class="tag">Agentic Workflows</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="icon">SKILL://</div>
+      <h3>Reusable Agent Skills</h3>
+      <p>Create reusable skills and capability modules for specific tasks such as API operations, code generation, troubleshooting, document processing, monitoring and technical support.</p>
+      <div class="tags">
+        <span class="tag">Skills</span>
+        <span class="tag">Tool Calling</span>
+        <span class="tag">Prompt Design</span>
+        <span class="tag">Automation</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="icon">MCP://</div>
+      <h3>MCP Server Integration</h3>
+      <p>Design and integrate Model Context Protocol servers to securely expose tools, data sources, APIs and operational capabilities to AI agents.</p>
+      <div class="tags">
+        <span class="tag">MCP Servers</span>
+        <span class="tag">APIs</span>
+        <span class="tag">Enterprise Data</span>
+        <span class="tag">Secure Tool Access</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="icon">TOOL://</div>
+      <h3>Purpose-Built AI Tools</h3>
+      <p>Create focused tools for a defined operational purpose instead of generic chatbots—for example diagnostics, log analysis, workflow actions, reporting, integration support and engineering assistants.</p>
+      <div class="tags">
+        <span class="tag">Diagnostics</span>
+        <span class="tag">Log Analysis</span>
+        <span class="tag">Engineering Tools</span>
+        <span class="tag">Operations</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="icon">CODE://</div>
+      <h3>AI-Assisted Software Engineering</h3>
+      <p>Use Claude, GitHub and Codex-style coding agents to accelerate development, refactoring, testing, documentation and repository-based engineering workflows with human review.</p>
+      <div class="tags">
+        <span class="tag">Claude</span>
+        <span class="tag">GitHub</span>
+        <span class="tag">Codex</span>
+        <span class="tag">CI/CD</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="icon">ORCH://</div>
+      <h3>Agent Orchestration & Governance</h3>
+      <p>Connect agents with workflows, approval steps, APIs, rules and observability while considering accuracy, privacy, latency, cost, permissions and failure modes.</p>
+      <div class="tags">
+        <span class="tag">Human-in-the-loop</span>
+        <span class="tag">Evaluation</span>
+        <span class="tag">Observability</span>
+        <span class="tag">Guardrails</span>
+      </div>
+    </article>
+  </div>
+</div>
+</section>
+
+<section id="conversational-ai">
+<div class="wrap">
+  <div class="section-head">
+    <div><div class="kicker">AI SOLUTIONS://</div><h2>Conversational AI & Lead Automation</h2></div>
+    <p>Design and delivery of AI chatbots and automated engagement systems that connect websites, WhatsApp, APIs, business workflows and human teams.</p>
+  </div>
+  <div class="grid">
+    <article class="card"><div class="icon">BOT://</div><h3>AI Chatbot Engineering</h3><p>Context-aware chatbots, website widgets, prompt and agent engines, automated conversations, intent profiling and 24/7 customer engagement.</p><div class="tags"><span class="tag">LLM APIs</span><span class="tag">Prompt Engineering</span><span class="tag">Agents</span><span class="tag">Web Chat</span></div></article>
+    <article class="card"><div class="icon">WA://</div><h3>WhatsApp Automation</h3><p>WhatsApp Business API integration, webhooks, message workflows, lead capture, smart qualification, routing and seamless human-agent handoff.</p><div class="tags"><span class="tag">WhatsApp API</span><span class="tag">Respond.io</span><span class="tag">Webhooks</span><span class="tag">Lead Routing</span></div></article>
+    <article class="card"><div class="icon">VOICE://</div><h3>Voice & Conversational Workflows</h3><p>Voice-enabled conversational experiences and workflow automation designed to move users from initial engagement to structured business actions.</p><div class="tags"><span class="tag">Voiceflow</span><span class="tag">Voice AI</span><span class="tag">Automation</span></div></article>
+    <article class="card"><div class="icon">API://</div><h3>AI Application Stack</h3><p>Full-stack AI applications using modern frontends, asynchronous APIs, relational data stores, LLM services and cloud deployment platforms.</p><div class="tags"><span class="tag">React / Next.js</span><span class="tag">FastAPI</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span></div></article>
+    <article class="card"><div class="icon">FLOW://</div><h3>Lead & Workflow Automation</h3><p>Automated qualification, intent capture, workflow orchestration, smart handoff, queue management and integration with operational systems.</p><div class="tags"><span class="tag">Make.com</span><span class="tag">n8n</span><span class="tag">APIs</span><span class="tag">Orchestration</span></div></article>
+    <article class="card"><div class="icon">QA://</div><h3>AI Quality & Production Readiness</h3><p>Accuracy benchmarks, workflow testing, stress testing, bot logs, analytics, human review, technical handover and production support.</p><div class="tags"><span class="tag">Evaluation</span><span class="tag">Analytics</span><span class="tag">Human-in-loop</span><span class="tag">QA</span></div></article>
+  </div>
+</div>
+</section>
+
+<section id="services">
+<div class="wrap">
+  <div class="section-head">
+    <div><div class="kicker">Consulting services</div><h2>End-to-end technology services</h2></div>
+    <p>From assessment and architecture through implementation, automation, migration, observability and managed support.</p>
+  </div>
+  <div class="grid">
+    <article class="card"><div class="icon">AI /</div><h3>GenAI & Intelligent Automation</h3><p>Enterprise chatbots, knowledge assistants, copilots, AI workflows, document automation and practical GenAI proofs of concept.</p><div class="tags"><span class="tag">LangChain</span><span class="tag">Ollama</span><span class="tag">Llama</span><span class="tag">ChromaDB</span></div></article>
+    <article class="card"><div class="icon">OT /</div><h3>Industrial IoT, SCADA & MES</h3><p>Ignition Vision, Perspective and WebDev solutions; flow computer, PLC and Siemens S7 integration; OPC UA and REST APIs; SCADA/MES connectivity; analyzer and sampling systems; telemetry and equipment monitoring; plus FAT, SAT and commissioning support.</p><div class="tags"><span class="tag">SCADA</span><span class="tag">MES</span><span class="tag">IoT</span><span class="tag">Grafana</span></div></article>
+    <article class="card"><div class="icon">CLD /</div><h3>Cloud & Platform Engineering</h3><p>Cloud migration, hybrid architecture, AWS/Azure deployment, IaC, containers, HA/DR and resilient platform engineering.</p><div class="tags"><span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">Terraform</span><span class="tag">Kubernetes</span></div></article>
+    <article class="card"><div class="icon">MFT /</div><h3>Managed File Transfer</h3><p>Secure enterprise MFT architecture, transfer orchestration, failover, encryption, storage abstraction, monitoring and platform modernization.</p><div class="tags"><span class="tag">Axway CFT</span><span class="tag">Secure Transport</span><span class="tag">MinIO</span><span class="tag">SFTP</span></div></article>
+    <article class="card"><div class="icon">INT /</div><h3>Enterprise Integration</h3><p>Messaging, middleware, API integration, transformation, integration modernization and complex source-to-target troubleshooting.</p><div class="tags"><span class="tag">IBM MQ</span><span class="tag">IIB</span><span class="tag">DataPower</span><span class="tag">Solace</span></div></article>
+    <article class="card"><div class="icon">DEV /</div><h3>DevOps & CI/CD</h3><p>CI/CD, release automation, infrastructure as code, environment management, manifest-driven deployment and secure delivery practices.</p><div class="tags"><span class="tag">Azure DevOps</span><span class="tag">Jenkins</span><span class="tag">Ansible</span><span class="tag">Git</span></div></article>
+    <article class="card"><div class="icon">OBS /</div><h3>Monitoring, Observability & SRE</h3><p>Full-stack visibility across applications, infrastructure, APIs and industrial services using dashboards, metrics, logs and health checks.</p><div class="tags"><span class="tag">Grafana</span><span class="tag">ELK</span><span class="tag">Kibana</span><span class="tag">OpenTelemetry</span></div></article>
+    <article class="card"><div class="icon">SEC /</div><h3>Security Engineering</h3><p>TLS modernization, encryption, signatures, HSM-backed key management, certificate automation, secrets management and secure integration.</p><div class="tags"><span class="tag">TLS 1.3</span><span class="tag">Vault</span><span class="tag">HSM</span><span class="tag">SHA-2</span></div></article>
+    <article class="card"><div class="icon">QA /</div><h3>QA & Performance Testing</h3><p>Manual and automated testing, API testing, performance testing, integration validation and release quality assurance.</p><div class="tags"><span class="tag">JMeter</span><span class="tag">API Testing</span><span class="tag">SIT/UAT</span><span class="tag">Automation</span></div></article>
+    <article class="card"><div class="icon">SW /</div><h3>Software & API Development</h3><p>Custom web, backend and API platforms with scalable, secure and maintainable engineering focused on enterprise integration.</p><div class="tags"><span class="tag">Python</span><span class="tag">Java</span><span class="tag">REST API</span><span class="tag">Web</span></div></article>
+    <article class="card"><div class="icon">MS /</div><h3>Managed Services</h3><p>Production operations, L3 support, system administration, enhancements, incident resolution, release support and continuous improvement.</p><div class="tags"><span class="tag">L3 Support</span><span class="tag">RCA</span><span class="tag">Operations</span><span class="tag">HA/DR</span></div></article>
+    <article class="card"><div class="icon">DX /</div><h3>Technology Consulting & Transformation</h3><p>Discovery, feasibility, architecture, migration strategy, modernization planning, technical design and implementation governance.</p><div class="tags"><span class="tag">Architecture</span><span class="tag">Migration</span><span class="tag">POC</span><span class="tag">Modernization</span></div></article>
+  </div>
+</div>
+</section>
+
+<section id="packages">
+<div class="wrap">
+  <div class="section-head">
+    <div><div class="kicker">Hire me for</div><h2>Freelance engagement packages</h2></div>
+    <p>Clear project-shaped offerings that make it easier for clients to understand exactly where I can help.</p>
+  </div>
+  <div class="feature">
+    <article class="project"><small>Assessment</small><h3>Enterprise Integration Health Check</h3><p>Architecture, middleware, APIs, MFT, security and monitoring assessment with a prioritized modernization roadmap.</p></article>
+    <article class="project"><small>Modernization</small><h3>MFT Modernization & Automation</h3><p>Secure transfer architecture, orchestration, cloud storage, encryption, failover, monitoring and CI/CD.</p></article>
+  </div>
+  <div class="feature">
+    <article class="project"><small>Platform</small><h3>Cloud & DevOps Platform Accelerator</h3><p>Terraform/Ansible infrastructure, CI/CD, environment automation, secrets management and repeatable deployment patterns.</p></article>
+    <article class="project"><small>Industrial</small><h3>SCADA / MES Observability</h3><p>Industrial interface health monitoring, API checks, telemetry, SQL metrics and Grafana operational dashboards.</p></article>
+  </div>
+  <div class="feature">
+    <article class="project"><small>SRE</small><h3>Integration Observability Accelerator</h3><p>Structured logging, health checks, transaction tracking, Grafana/Elastic dashboards and operational alerting.</p></article>
+    <article class="project"><small>AI</small><h3>Enterprise GenAI Proof of Concept</h3><p>Focused knowledge assistant, document automation, chatbot or private/local GenAI prototype for a defined business use case.</p></article>
+  </div>
+</div>
+</section>
+
+<section id="industries">
+<div class="wrap">
+  <div class="section-head">
+    <div><div class="kicker">Industry solutions</div><h2>Enterprise & industrial domains</h2></div>
+    <p>Services can be tailored to regulated enterprises, industrial operations and digital-first technology environments.</p>
+  </div>
+  <div class="stack">
+    <div><b>Financial</b>Banking & Finance</div><div><b>Risk</b>Insurance</div>
+    <div><b>Industrial</b>Manufacturing</div><div><b>Infrastructure</b>Energy</div>
+    <div><b>Connectivity</b>Telecommunications</div><div><b>Care</b>Healthcare</div>
+    <div><b>Commerce</b>Retail</div><div><b>Mobility</b>Automotive</div>
+    <div><b>Operations</b>Travel & Logistics</div><div><b>Science</b>Life Sciences</div>
+    <div><b>Digital</b>Software / Technology</div><div><b>Infrastructure</b>Data Centers</div>
+  </div>
+</div>
+</section>
+
+<section id="projects">
+<div class="wrap">
+  <div class="section-head">
+    <div><div class="kicker">Selected project patterns</div><h2>Portfolio-ready case studies</h2></div>
+    <p>These describe the work and outcome without naming employers or exposing dates or client-confidential details.</p>
+  </div>
+  <div class="feature">
+    <article class="project">
+      <small>Cloud / Integration</small>
+      <h3>Vendor-Agnostic File Transfer Framework</h3>
+      <p>Designed a reusable framework for enterprise file-transfer workloads across hybrid environments.</p>
+      <ul><li>Automated AWS and Azure services with Terraform modules.</li><li>Covered transfer orchestration, failover and monitoring.</li><li>Reduced infrastructure inconsistency through repeatable deployment patterns.</li><li>Supported transparent storage using MinIO to reduce direct NAS dependency.</li></ul>
+    </article>
+    <article class="project">
+      <small>DevOps / Platform</small>
+      <h3>Manifest-Driven Integration Deployment</h3>
+      <p>Created a deployment approach where integration footprints could be defined and promoted consistently through environments.</p>
+      <ul><li>Built Azure DevOps YAML pipelines for installation, testing and deployment.</li><li>Used Ansible and Terraform for reproducible environments.</li><li>Embedded secure secret-management practices.</li><li>Improved repeatability of migration and release activities.</li></ul>
+    </article>
+  </div>
+  <div class="feature">
+    <article class="project">
+      <small>Security / Middleware</small>
+      <h3>Transport Security Modernization</h3>
+      <p>Modernized legacy middleware security controls while maintaining compatibility with external systems.</p>
+      <ul><li>Migrated insecure SSL v3 configurations to TLS 1.2/1.3.</li><li>Implemented SHA-2 support.</li><li>Configured digital-signature, encryption and decryption policies.</li><li>Automated certificate-renewal operations using Python.</li></ul>
+    </article>
+    <article class="project">
+      <small>SRE / Observability</small>
+      <h3>Integration Monitoring & Operational Automation</h3>
+      <p>Implemented platform monitoring and automation to improve operational visibility and reduce repetitive support effort.</p>
+      <ul><li>Built custom DataPower monitoring automation.</li><li>Implemented Elastic Stack log analytics.</li><li>Supported HA, DR and production issue resolution.</li><li>Applied root-cause analysis across MQ, middleware and transfer interfaces.</li></ul>
+    </article>
+  </div>
+</div>
+</section>
+
+<section id="stack">
+<div class="wrap">
+  <div class="section-head">
+    <div><div class="kicker">Technical stack</div><h2>Tools I can deliver with</h2></div>
+    <p>A concise buyer-friendly view of the technologies clients can hire me for.</p>
+  </div>
+  <div class="stack">
+    <div><b>Cloud</b>AWS EC2, Networking, S3, Azure</div>
+    <div><b>Infrastructure</b>Terraform, Ansible, Docker, Podman, Kubernetes</div>
+    <div><b>CI/CD</b>Azure DevOps, Jenkins, Git, Bitbucket, JFrog</div>
+    <div><b>Integration</b>Axway CFT, Secure Transport, IBM MQ, IIB, DataPower, Solace</div>
+    <div><b>Development</b>Python, Java, J2EE, Bash, Groovy</div>
+    <div><b>Data / Transform</b>XML, XSD, XSLT, ESQL, COBOL Copybook mappings</div>
+    <div><b>Observability</b>Grafana, Elastic Stack, Kibana, OpenTelemetry</div>
+    <div><b>GenAI</b>LangChain, Llama, Ollama, Streamlit, ChromaDB</div>
+  </div>
+</div>
+</section>
+
+
+<section id="contact">
+<div class="wrap">
+  <div class="section-head">
+    <div><div class="kicker">CONTACT://</div><h2>Freelancing & Consulting</h2></div>
+    <p>Need help with AI, automation, modernization, SCADA/MES, industrial integration, cloud or enterprise platforms? Start a direct WhatsApp conversation.</p>
+  </div>
+  <div class="project" style="text-align:center">
+    <small>AVAILABLE FOR PROJECTS</small>
+    <h3>Discuss a Project</h3>
+    <p>Share your requirement, current architecture, problem statement or project objective and we can discuss the right technical approach.</p>
+    <a class="whatsapp-btn" href="https://wa.me/601145727789?text=Hi%20HAGI%2C%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener"><svg class="whatsapp-icon" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16.04 3C8.85 3 3 8.77 3 15.86c0 2.5.74 4.94 2.13 7.02L3 29l6.33-2.06a13.13 13.13 0 0 0 6.7 1.84h.01C23.23 28.78 29 23 29 15.9 29 8.79 23.23 3 16.04 3Zm7.63 18.22c-.32.9-1.88 1.72-2.58 1.8-.67.08-1.52.11-2.46-.15-.57-.16-1.3-.42-2.24-.82-3.94-1.69-6.5-5.61-6.7-5.87-.2-.26-1.6-2.1-1.6-4.01 0-1.92 1.02-2.86 1.38-3.25.36-.39.79-.49 1.05-.49h.76c.24.01.57-.09.89.67.32.77 1.09 2.65 1.19 2.84.1.2.16.42.03.68-.13.26-.2.42-.39.65-.2.23-.41.51-.59.68-.2.19-.4.4-.17.79.23.39 1.02 1.66 2.19 2.69 1.5 1.32 2.77 1.73 3.16 1.92.39.19.62.16.85-.1.23-.26.98-1.13 1.24-1.52.26-.39.52-.32.88-.19.36.13 2.29 1.07 2.68 1.26.39.19.65.29.75.45.1.16.1.94-.22 1.84Z"/></svg><span>Discuss a Project on WhatsApp</span></a>
+    <div class="contact-number">WhatsApp: +60 11-4572 7789</div>
+  </div>
+</div>
+</section>
+
+</main>
+
+<footer><div class="wrap">© HAGI · AI Engineering · Automation · Modernization · SCADA</div></footer>
+<a class="mobile-whatsapp" href="https://wa.me/601145727789?text=Hi%20HAGI%2C%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" aria-label="Chat with HAGI on WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16.04 3C8.85 3 3 8.77 3 15.86c0 2.5.74 4.94 2.13 7.02L3 29l6.33-2.06a13.13 13.13 0 0 0 6.7 1.84h.01C23.23 28.78 29 23 29 15.9 29 8.79 23.23 3 16.04 3Zm7.63 18.22c-.32.9-1.88 1.72-2.58 1.8-.67.08-1.52.11-2.46-.15-.57-.16-1.3-.42-2.24-.82-3.94-1.69-6.5-5.61-6.7-5.87-.2-.26-1.6-2.1-1.6-4.01 0-1.92 1.02-2.86 1.38-3.25.36-.39.79-.49 1.05-.49h.76c.24.01.57-.09.89.67.32.77 1.09 2.65 1.19 2.84.1.2.16.42.03.68-.13.26-.2.42-.39.65-.2.23-.41.51-.59.68-.2.19-.4.4-.17.79.23.39 1.02 1.66 2.19 2.69 1.5 1.32 2.77 1.73 3.16 1.92.39.19.62.16.85-.1.23-.26.98-1.13 1.24-1.52.26-.39.52-.32.88-.19.36.13 2.29 1.07 2.68 1.26.39.19.65.29.75.45.1.16.1.94-.22 1.84Z"/></svg></a>
+
+<script>
+(function(){
+  const btn=document.querySelector('.mobile-menu-btn');
+  const menu=document.getElementById('mobile-nav');
+  if(!btn||!menu) return;
+  btn.addEventListener('click',function(){
+    const open=menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded',String(open));
+    btn.textContent=open?'×':'☰';
+  });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+      btn.textContent='☰';
+    });
+  });
+  document.addEventListener('click',function(e){
+    if(!menu.contains(e.target)&&!btn.contains(e.target)){
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+      btn.textContent='☰';
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
